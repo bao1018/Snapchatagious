@@ -24,7 +24,8 @@
 		  console.log("click up");
 		  $(this).addClass('scaleDown');
 		  $('.down').addClass('scaleDown');
-		  $('.check').attr("class","check votedUp fa fa-arrow-up")
+		  $('.check').attr("class","check votedUp fa fa-arrow-up");
+      $('.check').html("voted");
 		  voted = true;
 		});
 		
@@ -32,6 +33,7 @@
 		  $(this).addClass('scaleDown');
 		  $('.up').addClass('scaleDown');
 		  $('.check').attr("class","check votedDown fa fa-arrow-down")
+      $('.check').html("voted");
 		  voted = true;
 		});
 		
@@ -43,6 +45,22 @@
 		}
 
 
+		//  tagging stuff
+		new Taggle('oldTag', {
+		    tags: ['These', 'are', 'old']
+		});
+		$('#oldTag > .taggle_list').css("height","30px"); 
+		$('#oldTag .taggle_li_input_class').remove();     //  remove input area
+    $('#oldTag ul li').each(function( index ) {       //  remove "close" button 
+       $(this).find('a').remove();
+       $(this).css('background-color',"#89C4F4");
+       $(this).find('span').css('color','white');
+    });
+
+		new Taggle('newTag');
+		$('#newTag > .taggle_placeholder').remove();
+		$('#newTag ul .taggle_li_input_class input').attr("placeholder","tag it!");
+    $('#newTag ul li input').css('height',"30px");
 	});
 
 
@@ -95,11 +113,20 @@
     <ul class="right">
       <li class=""><a href="#" style="color:red">NSFW</a></li>
       <li class="divider"></li>
-      <li class="active"><a href="#">Funny</a></li>
+      <li class="active">
+        <a href="#" style="font-family: 'Comic Sans MS', cursive, sans-serif;
+">Funny</a>
+      </li>
       <li class="divider"></li>
-      <li class="active"><a href="#">Cute</a></li>
+      <li class="active">
+        <a href="#" style="font-family: 'Comic Sans MS', cursive, sans-serif;
+">Cute</a>
+      </li>
       <li class="divider"></li>
-      <li class="active"><a href="#">Creepy</a></li>
+      <li class="active">
+        <a href="#" style="font-family: 'Comic Sans MS', cursive, sans-serif;
+">Creepy</a>
+      </li>
 
       <li class="has-form">
 	    <div class="row collapse">
@@ -127,29 +154,91 @@
 <div id="container" class="transitions-enabled centered clearfix masonry">
   <div class="box col3">
   	<ul class="grid cs-style-2">
-    <li>
-   	 <figure>
-		<img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2013/06/CaptionHoverEffect31.png" alt="CaptionHoverEffect3" width="814" height="331" class="alignnone size-full wp-image-15511">
+      <li>
+   	    <figure>
+		      <img src="http://codropspz.tympanus.netdna-cdn.com/codrops/wp-content/uploads/2013/06/CaptionHoverEffect31.png" alt="CaptionHoverEffect3" width="814" height="331" class="alignnone size-full wp-image-15511">
 
-            <figcaption>
-                <!-- <h3>Camera</h3> -->
-                <!-- <span>Jacob Cummings</span> -->
-                <!-- <a href="http://dribbble.com/shots/1115632-Camera">Take a look</a> -->
-				<ul class="small-block-grid-3" style="margin:3px">
-				  <li style="bottom:3px">
-				  	<div class="up fa fa-thumbs-up" ></div>
-					<div class="down fa fa-thumbs-down"></div>
-					<div class="check fa fa-angellist"></div>
-				  </li>
-				  <li><!-- Your content goes here --></li>
-				  <li><!-- Your content goes here -->
+          <figcaption>
+            <div class="row" style="max-height:100%">
+              <div 	class="small-12 large-12 columns" style="max-height:90px;padding-left:2%;padding-right:2%">
 
-				  </li>
-				</ul>
-		
-            </figcaption>
+            	  <div class="row" style="height:27px">
+            		  <div class="small-12 large-12 columns" style="padding-left:2px; padding-right:2px; height:inherit">
+            		    <div id="oldTag">
+            		    </div>
+					        </div>
+            	  </div>
+
+            	  <div class="row" style="height:27px">
+            		  <div class="small-12 large-12 columns" style="margin-top:3px;padding-left:2px; padding-right:2px; padding-top:2px; height:inherit">
+            		    <div id="newTag">
+						        </div>
+				      	  </div>
+            	  </div>
+
+            	  <div class="row" style="margin-right:7px;max-height:30px">
+
+            		  <div class="small-4 large-4 columns" style="padding-left:2px; padding-right:2px; height:inherit; float:right">
+            			  <div class="up fa fa-thumbs-up" ></div>
+				      		  <div class="down fa fa-thumbs-down"></div>
+				      		  <div class="check"></div>
+            		  </div>
+
+                  <div class="small-2 large-2 columns" style="padding-left:2px; padding-right:2px; height:inherit; float:right">
+                    <div class="report fa fa-trash" ></div>
+                  </div>
+                </div>
+  
+              </div>
+			      </div>		
+          </figcaption>
+
         </figure>
-    </li>
+      </li>
+      <li>
+        <figure>
+          <img src="http://img.redocn.com/201010/3/599750_1286086064SSce.jpg" alt="image1"/>
+
+          <figcaption>
+            <div class="row" style="max-height:100%">
+              <div  class="small-12 large-12 columns" style="max-height:90px;padding-left:2%;padding-right:2%">
+
+                <div class="row" style="height:27px">
+                  <div class="small-12 large-12 columns" style="padding-left:2px; padding-right:2px; height:inherit">
+                    <div id="oldTag">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row" style="height:27px">
+                  <div class="small-12 large-12 columns" style="margin-top:3px;padding-left:2px; padding-right:2px; padding-top:2px; height:inherit">
+                    <div id="newTag">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row" style="margin-right:7px;max-height:30px">
+
+                  <div class="small-4 large-4 columns" style="padding-left:2px; padding-right:2px; height:inherit; float:right">
+                    <div class="up fa fa-thumbs-up" ></div>
+                    <div class="down fa fa-thumbs-down"></div>
+                    <div class="check"></div>
+                  </div>
+
+                  <div class="small-2 large-2 columns" style="padding-left:2px; padding-right:2px; height:inherit; float:right">
+                    <div class="report fa fa-trash" ></div>
+                  </div>
+                </div>
+  
+              </div>
+            </div>    
+          </figcaption>
+
+        </figure>
+      </li>
+
+
+
 
 
     <a href="#" title="image1">
@@ -193,6 +282,14 @@
 
 
 <style type="text/css">
+/*top-bar style setting*/
+nav section ul li a {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
+
+
+
 /* image hover effects */
 
 .grid {
@@ -231,6 +328,8 @@
     color: #ed4e6e;
 }
 
+
+
 .grid figcaption h3 {
     margin: 0;
     padding: 0;
@@ -241,7 +340,7 @@
  
 .grid figcaption a {
     text-align: center;
-    padding: 5px 10px;
+    /*padding: 5px 10px;*/
     border-radius: 2px;
     display: inline-block;
     background: #ed4e6e;
@@ -292,43 +391,20 @@
 
 
 
-.up,.down{
-  border-radius:10px;
+.up{
+  margin-top: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius:5px;
   background: #2c3f52;
   color:rgba(255,255,255,0.5);
   float:left;
-  font-size:30px;
+  font-size:20px;
   height:100%;
-  line-height:90px;
+  line-height:130%;
   text-align:center;
   transition:all .2s linear;
-  width:40px;
-}
-
-.down{margin-left:2px;}
-
-.check{
-	visibility: hidden;
-  background:#f65330;
-  border-radius:10px;
-  color:#fff;
-  cursor:pointer;
-  font-size:50px;
-  height:100%;
-  line-height:90px;
-  position: absolute;
-  padding-left:20px;
-  right:-100px;
-  transition:all .2s linear;
-  width:100%;
-}
-
-.check:after{
-  content:'';
-  font:35px/90px 'Montserrat';
-  font-style:italic;
-  height:100%;
-  padding-left:0px;
+  width: 49%;
 }
 
 .up:hover{
@@ -337,11 +413,87 @@
   cursor:pointer;
 }
 
+.down{
+  margin-top: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius:5px;
+  background: #2c3f52;
+  color:rgba(255,255,255,0.5);
+  float:right;
+  font-size:20px;
+  height:100%;
+  line-height:130%;
+  text-align:center;
+  transition:all .2s linear;
+  width: 48%;
+}
+
+
 .down:hover{
   background:#e74c3c;
   color:#fff;
   cursor:pointer;
 }
+
+
+.down{margin-left:2px;}
+
+.report{
+  margin-top: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius:5px;
+  background: #2c3f52;
+  color:rgba(255,255,255,0.5);
+  float:left;
+  font-size:20px;
+  height:100%;
+  line-height:130%;
+  text-align:center;
+  transition:all .2s linear;
+  width: 100%;
+}
+
+.report:hover{
+  background:#9b59b6;
+  color:#fff;
+  cursor:pointer;
+}
+
+
+.check{
+
+  margin-top: 7px;
+  margin-bottom: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border-radius:5px;
+
+  height: 26px;
+	visibility: hidden;
+  background:#f65330;
+  color:#fff;
+  cursor:pointer;
+  font-size:20px;
+  line-height:130%;
+  position: absolute;
+  text-align:center;
+  /*padding-left:20px;*/
+  right:-100px;
+  transition:all .2s linear;
+  width:100%;
+}
+
+.check:after{
+  /*content:'upvoted';*/
+  /*font:20px/90px 'Montserrat';*/
+  font-style:italic;
+  height:inherit;
+  padding-left:0px;
+}
+
+
 
 
 
@@ -365,7 +517,13 @@
 }
 
 
+.oldTag{
+	height: 50%;
+}
 
+.newTag{
+	height: 50%;
+}
 
 
 
